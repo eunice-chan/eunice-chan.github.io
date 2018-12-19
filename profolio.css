@@ -41,7 +41,7 @@ h3 {
   font-size: 3vw
 }
 
-p, li, button, td {
+p, li, button, td, div {
   padding: 2px 5px;
   font-size: 2.5vw
 }
