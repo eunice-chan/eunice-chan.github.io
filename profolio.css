@@ -1,0 +1,89 @@
+/* Transparent hover effect! set opacity b/n 0.0 - 1.0*/
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  background-color: #292929;
+  color: snow;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+button {
+  background-color: snow;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 5px solid snow;
+  border-radius: 20vw;
+  margin: 5px 5vw;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+h1 {
+  background-color: snow;
+  color: #292929;
+  padding: 0px;
+  margin: 0px;
+  font-size: 10vw;
+}
+
+h2 {
+  background-color: snow;
+  color: #292929;
+  padding: 2px 5px;
+  font-size: 5vw
+}
+
+h3 {
+  background-color: khaki;
+  color: #292929;
+  padding: 2px 5px;
+  font-size: 3vw
+}
+
+p, li, button, td {
+  padding: 2px 5px;
+  font-size: 2.5vw
+}
+
+ul {
+  text-align: left;
+}
+
+#email {
+  background-color: khaki;
+  color: #292929;
+  font-variant: small-caps;
+}
+
+.empty_progress {
+  background-color: snow;
+  border-radius: 12px;
+  margin: 10px;
+}
+
+.progress {
+  background-color:khaki;
+  border-radius: 12px;
+  color:#292929;
+  height:1vm;
+  opacity: 0.6;
+}
+
+a {
+  background-color: snow;
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #292929;
+}
+
+a:hover, a:active {
+  color: darkgray;
+}
+
+button:hover, button:active  {
+  background-color: #404040;
+  border-color: #404040;
+  color: khaki;
+}
