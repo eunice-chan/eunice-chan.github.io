@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  animation: 4s ease-out fadeIn;
+  text-align: center;
+  background-color: #292929;
+  color: snow;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    -webkit-filter: blur(50px);
+    filter: blur(50px);
+    opacity: 0.0;
+  }
+  to {
+    -webkit-filter: blur(100px);
+    filter: blur(0px);
+    opacity: 1.0;
+  }
+}
+
+button {
+  background-color: snow;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  border: 5px solid snow;
+  border-radius: 20vw;
+  margin: 5px 5vw;
+  -webkit-transition: 1s;
+  transition: 0.5s;
+}
+
+button:hover, button:active {
+  background-color: lavenderblush;
+  border-color: lavenderblush;
+  color: pink;
+  opacity: 0.8;
+}
+
+a:hover, a:active {
+  color: pink;
+  opacity: 0.8;
+}
+
+h1 {
+  color: #292929;
+  padding: 0px;
+  margin: 5vw;
+  font-size: 10vw;
+}
+
+h2 {
+  width: 100vw;
+  background-color: snow;
+  border-radius: 0px;
+  color: #292929;
+  padding: 2px 5px;
+  font-size: 5vw;
+}
+
+.sub {
+  background-color: pink;
+  color: #292929;
+  padding: 2px 5px;
+  font-size: 3vw
+}
+
+p, li, button, td {
+  padding: 2px 5px;
+  font-size: 2.5vw;
+  margin-left: 5vw;
+}
+
+ul {
+  text-align: left;
+}
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+table {
+    margin: 5%;
+    width: 90%;
+}
+
+.small {
+  font-size: 2vw;
+}
+
+.empty_progress {
+  background-color: snow;
+  border-radius: 12em;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-bottom: 2.5vw;
+}
+
+.progress {
+  background-color: pink;
+  border-radius: 12em;
+  color:#292929;
+  height:1vm;
+  font-size: 2.5vw;
+  opacity: 0.6
+  width: 90vw;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: #292929;
+
+  color: snow;
+	text-shadow:
+		-1px -1px 0 black,
+		1px -1px 0 black,
+		-1px 1px 0 black,
+		1px 1px 0 black;
+}
