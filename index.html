@@ -9,24 +9,26 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(
-  function(){$("h2").click(function(){
-    $(this).nextAll(".content").first().slideToggle();
-  })
-});
-</script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+</style>
 <title>eunice chan</title>
 </head>
 <body>
-  <section id="intro" class="hero">
-        <div>
-            <h1><a href="mailto:ekchan@berkeley.edu">eunice chan</a></h1>
-            <button onclick="window.location.href='#proj'">experience</button>
-            <button onclick="window.location.href='#skills'">skills</button>
-            <button onclick="window.location.href='#school'">coursework</button>
-        </div>
+  <section class="vignette">
+    <header class="header">
+      <div style="float:right">
+      <a class="menu" href="exp.html">experience</a>
+      <a class="menu" href="skills.html">skills</a>
+      <a class="menu" href="school.html">coursework</a>
+      <div>
+    </header>
+    <div class="center">
+        <h1><a href="mailto:ekchan@berkeley.edu" style="color:snow">eunice chan</a></h1>
+        <p>Take the first step.</p>
+    </div>
   </section>
+  <!-- 
 
   <section id="proj" class="hero">
     <div>
@@ -35,7 +37,11 @@ $(document).ready(
         <table>
           <tr>
             <td><a href="http://eunice-chan.github.io">Personal website (this!)</a></td>
-            <td></td>
+            <td>
+              <ul>
+                <li class="small">Used HTML, CSS, and Javascript.</li>
+              </ul>
+            </td>
             <td>December 2018</td>
           </tr>
           <tr>
@@ -111,7 +117,7 @@ $(document).ready(
     <div>
       <h2>coursework</h2>
       <div class="content">
-      <p>University of California, Berkeley<br>Computer Science, B.A. 2020<br>GPA 3.419/4.0</p>
+      <p>University of California, Berkeley<br>Computer Science, B.A. Spring 2021<br>GPA 3.419/4.0</p>
       <ul>
         <li>[Current] CS61C: Great Ideas of Computer Architecture (Machine Structures)</li>
         <li>CS61B: Data Structures</li>
@@ -128,7 +134,7 @@ $(document).ready(
         <li>MATH53: Multivariable Calculus</li>
         <li>MATH1A & MATH1B: Calculus</li>
         <br>
-        <li>JAPAN10A & JAPAN10B: Beginning Japanese</li>
+        <li>JAPAN10A & JAPAN10B: Beginning Japanese (Osaka University)</li>
         <li>PHILOS4: Knowledge and Its Limits</li>
         <li>GEOG30: The Ocean World</li>
         <li>EPS80: Environmental Earth Sciences</li>
@@ -136,7 +142,6 @@ $(document).ready(
       </ul>
       </div>
     </div>
-  </section>
-<script src="script.js" type="text/javascript"></script>
+  </section>-->
 </body>
 </html>
