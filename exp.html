@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-<head><meta charset="utf-8">
+<head>
+<meta charset="utf-8">
 <meta name="description" content="Resume of Eunice Chan">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 </style>
 <title>eunice chan</title>
 </head>
 <body>
+  <div class="fullscreen loadin"></div>
+  <div id="exit"></div>
   <header class="header">
     <div style="float:right">
-    <a class="menu" href="index.html">main</a>
-    <a class="menu">experience</a>
-    <a class="menu" href="skills.html">skills</a>
-    <a class="menu" href="school.html">coursework</a>
+    <a class="menu" onclick="delay ('index.html')">main</a>
+    <a class="menu" id="exp">experience</a>
+    <a class="menu" onclick="delay ('school.html')">coursework</a>
     <div>
   </header>
   <div class="gallery">
@@ -74,8 +74,32 @@
         </div>
       </div>
 
+      <div class="component">
+        <h1 class="name">Programming Languages</h1>
+        <p class="date">Ordered from most familiar to least</p>
 
-      <div class="component"></div>
+        <div class="overlay">
+          <div class="center">
+            <h1>Programming Languages</h1>
+            <p>Java (self-taught, CS61B)</p>
+            <p>Python (self-taught, CS61A, DATA8)</p>
+            <p>C (CS61C)</p>
+            <p>Go (CS61C)</p>
+            <p>HTML (self-taught)</p>
+            <p>CSS (self-taught)</p>
+            <p>Javascript (self-taught)</p>
+            <p>C# (self-taught)</p>
+            <p>Scheme (CS61A)</p>
+            <p>RISC (CS61C)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <a href="https://github.com/eunice-chan">
+          <img style="width:90%;height:90%;padding:0 0 0 0;margin:5% 0 0 0;" alt="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2000px-Octicons-mark-github.svg.png" width="100" height="100">
+        </a>
+      </div>
 
     </div>
 

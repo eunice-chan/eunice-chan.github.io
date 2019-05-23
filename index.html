@@ -16,12 +16,13 @@
 </head>
 <body>
   <section class="vignette">
+    <div class="fullscreen loadin"></div>
+    <div id="exit"></div>
     <header class="header">
       <div style="float:right">
-      <a class="menu">main</a>
-      <a class="menu" href="exp.html">experience</a>
-      <a class="menu" href="skills.html">skills</a>
-      <a class="menu" href="school.html">coursework</a>
+      <a class="menu" id="main">main</a>
+      <a class="menu" onclick="delay ('exp.html')">experience</a>
+      <a class="menu" onclick="delay ('school.html')">coursework</a>
       <div>
     </header>
     <div class="center">
@@ -31,36 +32,6 @@
   </section>
   <!--
 
-  <section id="proj" class="hero">
-    <div>
-      <h2>projects & experiences</h2>
-      <div class="content">
-        <table>
-          <tr>
-            <td><a href="http://eunice-chan.github.io">Personal website (this!)</a></td>
-            <td>
-              <ul>
-                <li class="small">Used HTML, CSS, and Javascript.</li>
-              </ul>
-            </td>
-            <td>December 2018</td>
-          </tr>
-          <tr>
-            <td>CareFirst Seniors
-            </td>
-            <td>
-            <ul>
-              <li class="small">Helped move to new website.</li>
-              <li class="small">Mocked up 2018 financial report</li>
-            </ul>
-            </td>
-            <td>June 19 - July 21 2017</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </section>
-
   <section id="skills" class="hero">
     <div>
       <h2>skills</h2>
@@ -68,6 +39,7 @@
         <h2 class="sub">programming languages</h2>
         <div class="content">
           <ul>
+            <li>Go (CS61C)</li>
             <li>Python (self-taught, CS61A)</li>
             <li>Java (self-taught, CS61B)</li>
             <li>HTML (self-taught)</li>
@@ -76,38 +48,6 @@
             <li>C (CS61C)</li>
             <li>C# (self-taught)</li>
             <li>Scheme (CS61A)</li>
-          </ul>
-        </div>
-
-        <h2 class="sub">applications</h2>
-        <div class="content">
-          <ul>
-            <li>Atom, IntelliJ, Microsoft Visual Studio, Android Studio, Unity, Git</li>
-            <li>Adobe Premiere Pro, Adobe AfterEffects, Adobe Photoshop, Krita, Audacity</li>
-            <li>LaTeX, Microsoft Word, Microsoft Excel, Microsoft PowerPoint</li>
-          </ul>
-        </div>
-
-        <h2 class="sub">languages</h2>
-        <div class="content">
-          <div class="empty_progress">
-            <div class="progress", style="width:98%">English</div>
-          </div>
-          <div class="empty_progress">
-            <div class="progress", style="width:40%">Cantonese</div>
-          </div>
-          <div class="empty_progress">
-            <div class="progress", style="width:30%">Mandarin</div>
-          </div>
-          <div class="empty_progress">
-              <div class="progress", style="width:30%">Japanese</div>
-            </div>
-        </div>
-
-        <h2 class="sub">operating systems</h2>
-        <div class=content>
-          <ul>
-            <li>Windows, MacOS, Linux</li>
           </ul>
         </div>
       </div>
@@ -144,5 +84,6 @@
       </div>
     </div>
   </section>-->
+  <script src="script.js"></script>
 </body>
 </html>
