@@ -53,7 +53,7 @@ a:hover {
 .header {
   overflow: hidden;
   background-color: transparent;
-  padding: 1.5vw 1.5vh;
+  padding: 15px;
   width: 100%;
   float: right;
 }
@@ -73,7 +73,7 @@ a:hover {
 
 .menu{
   position: relative;
-  font-size: 2vh;
+  font-size: 15px;
 }
 
 .menu:after{
@@ -96,32 +96,58 @@ a:hover {
 }
 
 .gallery {
-  width: 100vw;
-  height: 100vw;
-  background-color: snow;
+  padding: .5vw;
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-content: flex-start
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
 }
+
+.gallery #campanile {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  width: 200px;
+  margin: .5vw;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4c/Berkeley_tower.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery #content {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  flex-wrap: wrap;
+  width: 200px;
+  margin: .5vw;
+}
+
 .component {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
   color: #333;
-  width: 25%;
-  height: 25%;
   background-color: snow;
-  text-align: center;
-  line-height: 5vh;
+  width: 300px;
+  padding: 50px 20px;
+  margin: .5vw;
+  justify-content: center;
+  align-items:center;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 .name {
-  margin-top: 40%;
   color: inherit;
-  font-size: 4vh;
+  font-size: 20px;
 }
 .date {
   color: inherit;
-  font-size: 2vh;
+  font-size: 15px;
 }
 
 .component:hover {
@@ -162,19 +188,6 @@ img:hover {
   background-image: radial-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3));
 }
 
-.half {
-  width: 50vw;
-  height: 98.5vh;
-}
-
-#campanile {
-  float: left;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4c/Berkeley_tower.jpg);
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
-}
-
 @keyframes rise {
   from {
     top: 0;
@@ -184,17 +197,4 @@ img:hover {
   from {
     top: -100%;
   }
-}
-
-@media screen and (max-width: 900px) {
-  .component {
-    width: 50%;
-    height: 50%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .component {
-    width: 100%;
-    height: 100%;
 }
