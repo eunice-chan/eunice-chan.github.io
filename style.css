@@ -1,11 +1,12 @@
 *{
-  color: snow;
+  color: inherit;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background-color: #333;
+  color: navy;
+  background-color: lightsteelblue;
   text-align: center;
   margin: 0;
 
@@ -20,8 +21,8 @@ a {
   text-decoration: none;
   -webkit-transition: 1s;
   transition: 1s;
-  color: snow;
-  padding: 0 1.5vw;
+  background-color: steelblue;
+  margin: 5px;
 }
 
 a:hover {
@@ -34,7 +35,7 @@ a:hover {
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #222;
+  background-color: powderblue;
   z-index: 2;
   animation: 1.5s ease-in rise;
 }
@@ -45,15 +46,16 @@ a:hover {
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #222;
+  background-color: powderblue;
   z-index: 2;
   animation: 0.5s ease-out fall;
 }
 
 .header {
-  overflow: hidden;
+  overflow: visible;
   background-color: transparent;
-  padding: 15px;
+  position: relative;
+  padding: 10px 20px;
   width: 100%;
   float: right;
 }
@@ -73,26 +75,17 @@ a:hover {
 
 .menu{
   position: relative;
+  color: lightsteelblue;
+  padding: 10px;
   font-size: 15px;
+  background-color: navy;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-.menu:after{
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 3px;
-  right: 0;
-  background: #fff;
-  transition: width .2s ease;
-  -webkit-transition: width .2s ease;
-}
-
-.menu:hover:after{
-  width: 100%;
-  left: 0;
-  background: #fff;
+.menu:hover {
+  padding-bottom: 40px;
+  background-color: steelblue;
 }
 
 .gallery {
@@ -111,9 +104,8 @@ a:hover {
   -ms-flex: auto;
   flex: auto;
   width: 200px;
-  margin: .5vw;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4c/Berkeley_tower.jpg);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -124,15 +116,15 @@ a:hover {
   flex: auto;
   flex-wrap: wrap;
   width: 200px;
-  margin: .5vw;
 }
 
 .component {
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  color: #333;
-  background-color: snow;
+  color: lightsteelblue;
+  background-color: navy;
+  border-radius: 10px;
   width: 300px;
   padding: 50px 20px;
   margin: .5vw;
@@ -151,8 +143,8 @@ a:hover {
 }
 
 .component:hover {
-  color: snow;
-  background-color: #333;
+  color: navy;
+  background-color: lightsteelblue;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
@@ -174,18 +166,8 @@ img:hover {
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
+  color: lightsteelblue;
   z-index: 2;
-}
-
-.vignette {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3));
 }
 
 @keyframes rise {
