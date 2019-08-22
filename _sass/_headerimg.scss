@@ -1,0 +1,14 @@
+#Coursework {
+  background:
+    linear-gradient($background-color-transparent, $background-light-transparent),
+    url("https://upload.wikimedia.org/wikipedia/commons/7/77/UC-Berkeley-026-view-of-mt-tamalpais.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#About {
+  background:
+    linear-gradient($background-color-transparent, $background-light-transparent),
+    url("https://upload.wikimedia.org/wikipedia/commons/2/29/William-Adolphe_Bouguereau_-_Agreeable_Burden_1895.jpg");
+  background-position: 0% 10%;
+  background-size: cover;
+}

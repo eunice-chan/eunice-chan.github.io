@@ -1,0 +1,46 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@import
+	"base",
+	"layout";
+
+.wrapper {
+	padding: 40px;
+	margin: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-rows: 1fr;
+}
+.wrapper > div {
+  background-color: $background-light;
+	color: white;
+  text-align: center;
+  padding: 30px;
+  margin: 10px;
+  border-radius: .4rem;
+	transition: background-color ease-in-out 0.5s,
+	            text-align ease-in-out 0.5s,
+							padding ease-in-out 0.5s,
+							margin ease-in-out 0.5s,
+							border-radius ease-in-out 0.5s;
+	&:hover,
+	&:active {
+	  background-color: $main;
+	}
+
+}
+@media (min-width: 480px) {
+	.wrapper {
+		padding: 10px;
+	  grid-template-columns: repeat(2, 50%);
+	}
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		padding: 20px;
+	  grid-template-columns: repeat(4, 25%);
+	}
+}
