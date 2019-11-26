@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Highlights</title>
+  <title>Growth</title>
 
   <link rel="icon"
         type="image/png"
@@ -16,7 +16,7 @@
 
   <link
     rel="canonical"
-    href="http://localhost:4000/highlights/"
+    href="http://localhost:4000/growth/"
   />
 </head>
 
@@ -25,6 +25,7 @@
 	<div class="container">
 		<nav>
 			<ul>
+			<li><a href="/">Home</a></li>
  
 <li><a href="/about/">About</a></li>
   
@@ -32,7 +33,7 @@
   
 <li><a href="/resume/">Resume</a></li>
   
-<li><a href="/highlights/">Highlights</a></li>
+<li><a href="/growth/">Growth</a></li>
                  
 <li><a href="/blog">Blog</a></li>
 			</ul>
@@ -40,11 +41,53 @@
 	</div>
 </aside>
 
-    <header id=Highlights>
-	<h1>Highlights</h1>
+    <header id=Growth>
+	<h1>Growth</h1>
 </header>
 
     <div style="background-color: gold"><p style="text-align: center"><i class="fas fa-tools"></i>    Under Construction!   <i class="fas fa-tools"></i></p></div>
+
+<div class="persp panel">
+    <div class="label" onclick="Activate(this)">Categories</div>
+    <div class="label" onclick="Activate(this)">But</div>
+    <div class="label" onclick="Activate(this)">Maybe Not!</div>
+</div>
+
+<div id="start" class="window" style="opacity: 0;
+             width: 100vw;
+             height: 0vh;
+             -webkit-transition: ease-in-out 1s;
+             -moz-transition: ease-in-out 1s;
+             -o-transition: ease-in-out 1s;
+             transition: ease-in-out 1s;
+             background-color: lightgray;">
+</div>
+
+<script>
+  function MeasureToInt(str) {
+    return parseInt(str.slice(0, -2))
+  }
+
+  function Flip(window) {
+    var height = 100 - MeasureToInt(window.style.height);
+
+    window.style.height = height + "vh";
+    window.style.opacity = 1 - window.style.opacity;
+  }
+
+  function Activate(current) {
+    var window = document.getElementsByClassName("window")[0];
+    var newId  = current.innerHTML;
+
+    Flip(window);
+
+    if (newId != window.id && window.id != "start") {
+      setTimeout(function(){ Flip(window);}, 1000);
+    }
+
+    window.id = newId;
+  }
+</script>
 
 
     <footer>

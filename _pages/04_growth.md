@@ -1,15 +1,15 @@
 ---
 layout: grid
-title: Resume
-permalink: /resume/
+title: Growth
+permalink: /growth/
 ---
+
 {% include construction.html %}
 
 <div class="persp panel">
-    <div class="label" onclick="Activate(this)">Experiences</div>
-    <div class="label" onclick="Activate(this)">Relevant Coursework</div>
-    <div class="label" onclick="Activate(this)">Skills</div>
-    <div class="label" onclick="Activate(this)">Education</div>
+    <div class="label" onclick="Activate(this)">Categories</div>
+    <div class="label" onclick="Activate(this)">But</div>
+    <div class="label" onclick="Activate(this)">Maybe Not!</div>
 </div>
 
 <div id="start" class="window"
@@ -39,11 +39,9 @@ permalink: /resume/
     var window = document.getElementsByClassName("window")[0];
     var newId  = current.innerHTML;
 
-    Display(current);
     Flip(window);
 
     if (newId != window.id && window.id != "start") {
-      Display(current);
       setTimeout(function(){ Flip(window);}, 1000);
     }
 

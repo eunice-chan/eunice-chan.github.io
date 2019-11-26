@@ -5,7 +5,7 @@
 	"base",
 	"layout";
 
-.wrapper {
+.panel {
 	padding: 40px;
 	margin: 0;
 	width: 100%;
@@ -13,33 +13,41 @@
 	grid-template-columns: 100%;
 	grid-auto-rows: 1fr;
 }
-.wrapper > div {
+.persp {
+	perspective: 600px;
+}
+
+.persp .label {
+  backface-visibility: hidden;
   background-color: $background-light;
+	border-color: $background-light;
+  font-family: $font-style;
+  font-size: 1.1em;
+  -webkit-font-smoothing: antialiased;
 	color: white;
   text-align: center;
-  padding: 30px;
+  padding: 10px;
   margin: 10px;
   border-radius: .4rem;
-	transition: background-color ease-in-out 0.5s,
-	            text-align ease-in-out 0.5s,
-							padding ease-in-out 0.5s,
-							margin ease-in-out 0.5s,
-							border-radius ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 0.5s;
+  -moz-transition: ease-in-out 0.5s;
+  -o-transition: ease-in-out 0.5s;
+	transition: ease-in-out 0.5s;
 	&:hover,
 	&:active {
 	  background-color: $main;
+		box-shadow: 10px 10px $background-color-transparent;
 	}
-
 }
 @media (min-width: 480px) {
-	.wrapper {
+	.panel {
 		padding: 10px;
 	  grid-template-columns: repeat(2, 50%);
 	}
 }
 
 @media (min-width: 768px) {
-	.wrapper {
+	.panel {
 		padding: 20px;
 	  grid-template-columns: repeat(4, 25%);
 	}

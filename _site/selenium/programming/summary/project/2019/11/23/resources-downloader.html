@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Resource Downloader</title>
+
+  <link rel="icon"
+        type="image/png"
+        href="/images/favicon.png">
+
+  <script src="https://kit.fontawesome.com/a876aabaea.js"></script>
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/selenium/programming/summary/project/2019/11/23/resources-downloader.html"
+  />
+</head>
+
+  <body>
+    <aside>
+	<div class="container">
+		<nav>
+			<ul>
+			<li><a href="/">Home</a></li>
+ 
+<li><a href="/about/">About</a></li>
+  
+<li><a href="/coursework/">Coursework</a></li>
+  
+<li><a href="/resume/">Resume</a></li>
+  
+<li><a href="/growth/">Growth</a></li>
+                 
+<li><a href="/blog">Blog</a></li>
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+    <header id=Resource Downloader>
+	<h1>Resource Downloader</h1>
+</header>
+
+    <main>
+      <article>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Resource Downloader</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-11-23T09:56:45-08:00" itemprop="datePublished">Nov 23, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>A week or so ago, I had a midterm for my optimization models course. The course staff had uploaded a lot of resources on Piazza, but there was no easy way to download it all. I briefly considered going through the tables and downloading everything, but then I realized it was the perfect opportunity to learn to use Selenium. Selenium is a software framework for browser automation. I had heard about it before, and had been interested in using it in a project. Mind made up, I decided to put aside several hours to put something together to download all the resources on Piazza.</p>
+
+<p>I was able to log in to Piazza, navigate to the page, and target each file I wanted to download, but then I ran into an issue. Chrome would open every PDF file instead of download it. I tried various approaches from opening the Chrome settings tab and turning off opening PDFs to messing around with the settings of the instance of the web browser.
+In the end, I solved my issue by setting it so that Chrome would download the PDFs I open rather than preview them.
+I learned a lot about Selenium, which was much less difficult than I had expected. I felt as though the most interesting thing I learned was XPath. Selenium used XPath which I was unfamiliar with. I wasn’t sure if I ought to take the time to learn about it, but through various examples I found online, and leaning on my knowledge of HTML and traversing file directories, I was able to quickly pick up enough XPath to achieve my goals.</p>
+
+<p>Overall, I am satisfied with this project. One thing I would like to change would be figuring out why there are errors when I try to run the script with “Restart Kernel &amp; Run All” in Jupyter Notebook but not when I run each cell manually. At the time, I wanted to just get something working so I could switch my attention to studying soon, so I did not spend too much time debugging it. However, if this ends up being something I use frequently, I would definitely want to figure out what is the root cause.
+I enjoyed working with Selenium, and would like to work with it in future projects. The reason this caught my eye initially was that I read an article about someone using Selenium to train an AI to learn to play a webgame. I hope to do a similar project in the future.</p>
+
+  </div><a class="u-url" href="/selenium/programming/summary/project/2019/11/23/resources-downloader.html" hidden></a>
+</article>
+
+      </article>
+    </main>
+    <footer>
+	<i style="float: left; font-style: normal;">Made with <i class="fa fa-heart-o"></i>
+		by <a href="http://eunice-chan.github.io">Eunice Chan</a>
+		© 2019 </i>
+		<i style="float: right"><a href="https://github.com/eunice-chan" target="_blank" class="simple"> <i class="fab fa-github-alt"></i></a>
+<a href="https://www.linkedin.com/in/eunice-ck-chan/" target="_blank" class="simple"> <i class="fab fa-linkedin"></i></a>
+<a href="mailto:ekchan@berkeley.edu" class="simple"> <i class="fa fa-envelope"></i></a>
+</i>
+</footer>
+
+  </body>
+</html>

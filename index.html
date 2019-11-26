@@ -2,26 +2,25 @@
 layout: landing
 ---
 
-<div class="wrapper">
-    <div class="column align-right">
-        {% if site.logo %}
-        <div class="logo-container">
-          <a class="simple logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.logo }}')"></a>
-        </div>
-        {% endif %}
+<div class="column align-right">
 
-        {% if site.title %}
-        <div class="title-container"><h1>{{ site.title }}</h1></div>
-        {% endif %}
-
-        {% if site.tagline %}
-        <div class="tagline-container"><p>{{ site.tagline }}</p></div>
-        {% endif %}
-
-        {% include external.html %}
-
+    {% if site.logo %}
+    <div class="logo-container">
+      <a class="simple logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.logo }}')"></a>
     </div>
-    <div class="column align-left">
-        {% include landing_content.html %}
-    </div>
+    {% endif %}
+
+    {% if site.title %}
+    <div class="title-container"><h1>{{ site.title }}</h1></div>
+    {% endif %}
+
+    {% if site.tagline %}
+    <div class="tagline-container"><p>{{ site.tagline }}</p></div>
+    {% endif %}
+
+    {% include external.html %}
+
+</div>
+<div class="column align-left">
+    {% include landing_content.html %}
 </div>

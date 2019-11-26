@@ -10,11 +10,11 @@ I'm an undergraduate as UC Berkeley with a double major in computer science and 
 My focus is on learning new things and self-improvement so I know a little bit about a lot. My broad knowledge base allows me ability to pick things up quickly and relatively independently.
 
 ## What I'm Learning
-My interests are computer science (apparent from my major), languages, the practice of art, and music.
+My interests are computer science and data science (apparent from my majors), languages, the practice of art, and music.
 
-### Computer Science
+### Programming (CD&DS)
 I enjoy making computer games, websites, and small applications, as well as data analysis and visualization.  
-I'm currently reading up on algorithms and machine learning.
+I'm currently reading up on algorithms and machine learning. I think machine learning is really cool, and have been learning a lot about it. I plan on eventually making a project with machine learning once I have less on my plate, so stay tuned!
 
 ### Languages
 I am studying Japanese, Mandarin Chinese, and Cantonese Chinese. I went to Japan over a summer to study Japanese in my sophomore year, but haven't found the opportunity to practice it with another person since then. I couldn't find any material to help me improve my Cantonese. Meanwhile, Mandarin is improving at a snail's pace because it has a very low priority.

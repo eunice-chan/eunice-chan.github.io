@@ -19,6 +19,9 @@ h6 {
   text-decoration: none;
   font-weight: bold;
   background-image: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
   transition: none; }
 
 .simple:hover,
@@ -35,6 +38,9 @@ a:visited {
   background-image: linear-gradient(transparent 2px, #52E892 2px, #52E892 4px, transparent 4px);
   background-size: 0% 6px, 100% 6px;
   background-position: 0 bottom, 0 bottom;
+  -webkit-transition: background-size 0.3s ease-in-out;
+  -moz-transition: background-size 0.3s ease-in-out;
+  -o-transition: background-size 0.3s ease-in-out;
   transition: background-size 0.3s ease-in-out;
   background-repeat: no-repeat; }
 
@@ -49,14 +55,19 @@ body {
   background-color: #1A527E;
   background-image: linear-gradient(#1A527E, #5EDAD2);
   width: 100%;
-  height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
   font-family: "VT323", "Lucida Console", Monaco, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.1em;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 .logo {
   width: 96px;
@@ -75,9 +86,11 @@ body {
   width: 100%; }
 
 .align-right {
+  padding-left: 20%;
   text-align: right; }
 
 .align-left {
+  padding-right: 20%;
   text-align: left; }
 
 a,
