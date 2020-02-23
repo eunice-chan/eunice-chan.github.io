@@ -3,8 +3,8 @@ layout: grid
 title: Resume
 permalink: /resume/
 ---
-{% include construction.html %}
 
+{% include construction.html %}
 <div class="persp panel">
     <div class="label" onclick="Activate(this)">Experiences</div>
     <div class="label" onclick="Activate(this)">Relevant Coursework</div>
@@ -39,11 +39,9 @@ permalink: /resume/
     var window = document.getElementsByClassName("window")[0];
     var newId  = current.innerHTML;
 
-    Display(current);
     Flip(window);
 
     if (newId != window.id && window.id != "start") {
-      Display(current);
       setTimeout(function(){ Flip(window);}, 1000);
     }
 

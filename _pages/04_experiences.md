@@ -3,8 +3,6 @@ layout: default
 title: Experiences
 permalink: /experiences/
 ---
-# Experiences
-
 ## Finalist, Berkeley Method of Entrepreneurship Bootcamp
 ### JAN 2020
 Participated in a one-week bootcamp about entrepreneurship and developing sound business models. Idea is to create a central place for the community of caregivers around a senior to coordinate care. Pitch placed in the top three in a competition judged by 7 venture capitalists. Continuing with the team to implement the idea.
