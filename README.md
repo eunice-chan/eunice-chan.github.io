@@ -2,6 +2,8 @@
 
 Plain HTML/CSS/JS, no build step — works directly on GitHub Pages.
 
+Made with Claude.
+
 ## Files
 - `index.html` — page structure
 - `style.css` — all styling
@@ -17,18 +19,9 @@ Plain HTML/CSS/JS, no build step — works directly on GitHub Pages.
 ## To update content
 Open `data/content.json` and edit the relevant array (`publications`, `research_experience`, `professional_experience`, `teaching`, `awards`, `education`). No HTML editing needed. Commit and push — GitHub Pages redeploys automatically within a minute or two.
 
-## Still to fill in
-A few fields are intentionally left blank in `content.json` because I didn't have the real values:
-- `links.github` and `links.linkedin` — add the profile URLs
-- `links.cv` — currently points to `cv.pdf`; add that file to the repo root (or update the path) so the "CV" link works
-- `publications[].link` / `publications[].code` — most papers now have a link (and some a code repo); the RISE AI talk and the undergrad thesis are still blank if you find links for those
-
 ## Local preview
 Because the page fetches `data/content.json`, opening `index.html` directly by double-clicking it (`file://`) will fail due to browser CORS rules. Run a local server instead, from this folder:
 ```
 python3 -m http.server 8000
 ```
 then open `http://localhost:8000`. (GitHub Pages serves it correctly with no extra steps.)
-
-## About the "pull from Google Scholar" idea
-Google Scholar has no public API and blocks scripted/cross-origin requests, so the page can't fetch it live on load. If keeping publications in sync with Scholar automatically matters, the practical option is a scheduled script (e.g. a GitHub Action running a scraper like the `scholarly` Python package on a weekly cron) that writes updated entries into `data/content.json` and commits them. That's a separate, optional add-on — happy to build it if wanted.
