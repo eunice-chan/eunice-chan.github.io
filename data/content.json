@@ -1,0 +1,280 @@
+{
+  "name": "Eunice Chan",
+  "title": "Computer Science Ph.D. Student @ UIUC",
+  "affiliation": "University of Illinois Urbana-Champaign",
+  "photo": "photo.jpeg",
+  "tagline": "Researching LLM applications and trustworthy ML.",
+  "about": "My work spans applications of LLMs and building trust in ML systems. Earlier research took me through robotics, neuroscience, and group robustness, and I've spent several years building production ML/NLP systems in industry as well.",
+  "links": {
+    "email": "ecchan2@illinois.edu",
+    "scholar": "https://scholar.google.com/citations?user=c6yuupMAAAAJ&hl=en",
+    "github": "https://github.com/eunice-chan",
+    "linkedin": "https://www.linkedin.com/in/eunice-ck-chan",
+    "cv": "cv.pdf"
+  },
+  "publications": [
+    {
+      "title": "Adversarial Bias: Data Poisoning Attacks on Fairness",
+      "authors": "Eunice Chan, Hanghang Tong",
+      "venue": "IEEE International Conference on Big Data",
+      "year": "2025",
+      "paper": "https://ieeexplore.ieee.org/abstract/document/11401793",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "title": "On Fairness Vulnerability: A Data Poisoning Attack Perspective",
+      "authors": "Eunice Chan, Hanghang Tong",
+      "venue": "Inaugural RISE AI Conference (AI for Safety and Safety of AI session)",
+      "year": "2025",
+      "paper": "",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "title": "Logic Query of Thoughts: Guiding Large Language Models to Answer Complex Logic Queries with Knowledge Graphs",
+      "authors": "Lihui Liu, Zihao Wang, Ruizhong Qiu, Yikun Ban, Eunice Chan, Yangqiu Song, Jingrui He, Hanghang Tong",
+      "venue": "arXiv preprint",
+      "year": "2024",
+      "paper": "https://arxiv.org/abs/2404.04264",
+      "code": "https://github.com/lihuiliullh/LGOT/tree/main",
+      "notes": ""
+    },
+    {
+      "title": "Group Fairness via Group Consensus",
+      "authors": "Eunice Chan*, Zhining Liu*, Yuheng Zhang, Hanghang Tong",
+      "venue": "7th Annual ACM FAccT Conference",
+      "year": "2024",
+      "paper": "https://dl.acm.org/doi/10.1145/3630106.3659006",
+      "code": "https://anonymous.4open.science/r/GroupDebias",
+      "notes": ""
+    },
+    {
+      "title": "Ensuring User-side Fairness in Dynamic Recommender Systems",
+      "authors": "Hyunsik Yoo, Zhichen Zeng, Jian Kang, Ruizhong Qiu, David Zhou, Zhining Liu, Fei Wang, Charlie Xu, Eunice Chan, Hanghang Tong",
+      "venue": "ACM The Web Conference",
+      "year": "2024",
+      "paper": "https://dl.acm.org/doi/10.1145/3589334.3645536",
+      "code": "https://github.com/hsyoo32/fade",
+      "notes": ""
+    },
+    {
+      "title": "The Effect of Model Size on Worst-Group Generalization",
+      "authors": "Alan Le Pham*, Eunice Chan*, Vikranth Srivatsa*, Dhruba Ghosh*, Yaoqing Yang, Yaodong Yu, Ruiqi Zhong, Joseph E. Gonzalez†, Jacob Steinhardt†",
+      "venue": "NeurIPS Workshop on Distribution Shifts",
+      "year": "2021",
+      "paper": "https://neurips.cc/virtual/2021/35517",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "title": "Long-Term Motion In-betweening with Motion Graphs",
+      "authors": "Eunice Chan, Angjoo Kanazawa",
+      "venue": "UC Berkeley Data Science Honors Thesis",
+      "year": "2021",
+      "paper": "",
+      "code": "",
+      "notes": ""
+    }
+  ],
+  "research_experience": [
+    {
+      "lab": "IDEA Lab",
+      "role": "Student Researcher",
+      "department": "Computer Science",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Aug 2022 – Dec 2025",
+      "details": [
+        "Research on incorporating fairness in machine learning, advised by Professor Hanghang Tong.",
+        "Explainable methods using LLMs over knowledge graphs, with Lihui Liu (lab alumna, now assistant professor at Wayne State University), advised by Professor Hanghang Tong."
+      ]
+    },
+    {
+      "lab": "Parasol Lab",
+      "role": "Student Researcher",
+      "department": "Computer Science",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Aug 2022 – May 2023",
+      "details": [
+        "Investigated the utility of living neurons for computation as part of an NSF Expedition in Computing project, focused on reservoir computing, advised by Professor Nancy Amato.",
+        "Motion-planning research with a focus on local planners, advised by Professor Nancy Amato."
+      ]
+    },
+    {
+      "lab": "Raymond Lab",
+      "role": "SURF Research Fellow",
+      "department": "Neuroscience",
+      "org": "Stanford University",
+      "dates": "Oct 2021 – Nov 2022",
+      "details": [
+        "Built eye-tracking hardware and ran VOR gain-up training to study gain consolidation after vestibular stimulation in mouse models.",
+        "Wrote tools to compare and manipulate neural and behavioral signals from SpikeGLX and Spike2 files.",
+        "Worked with Professor Jennifer Raymond and postdoc Trace Stay."
+      ]
+    },
+    {
+      "lab": "RISE Lab",
+      "role": "Student Researcher",
+      "department": "Computer Science",
+      "org": "University of California, Berkeley",
+      "dates": "Oct 2020 – Apr 2022",
+      "details": [
+        "Investigated the effect of widely-used vision models and augmentation techniques on model robustness under distributional shift.",
+        "Researched worst-case generalization with low-count subgroups, advised by Professor Joseph E. Gonzalez and Professor Jacob Steinhardt."
+      ]
+    },
+    {
+      "lab": "D-Lab",
+      "role": "Student Researcher",
+      "department": "Computational Social Sciences & Humanities",
+      "org": "University of California, Berkeley",
+      "dates": "Aug 2019 – Dec 2019",
+      "details": [
+        "ML linguistics research on efficient speech classification, transcribing audio to IPA representation in Python.",
+        "Presented at the end-of-year symposium."
+      ]
+    }
+  ],
+  "professional_experience": [
+    {
+      "role": "Research Scientist Intern, Generative AI",
+      "org": "Meta",
+      "dates": "Jun 2025 – Aug 2025",
+      "details": [
+        "Used Bayesian optimization to optimize data mix for fine-tuning Llama models, with Hakan Inan."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "org": "Herald (fka RunLLM, Aqueduct)",
+      "dates": "Feb 2022 – May 2025",
+      "details": [
+        "Built Q&A over RAG with LLMs across the full stack: ingestion of docs, Slack/Discord chats and JIRA tickets, retrieval, re-ranking, citation, and surfacing results in chat interfaces on docs sites, ticketing tools, and messaging platforms.",
+        "Startup founded by Professor Joseph Gonzalez and RISE Lab alumni; additionally advised by board member Professor Joseph Hellerstein.",
+        "Used by MotherDuck, Anyscale, Databricks, and others."
+      ]
+    },
+    {
+      "role": "Co-Founder, CTO",
+      "org": "Korion Health",
+      "dates": "Oct 2021 – Dec 2022",
+      "details": [
+        "Prototyped and led development of a stethoscope-based telehealth product with ML anomaly detection and preliminary diagnosis.",
+        "First place, Pitt Challenge Hackathon 2021; alumna of the Ascender Incubator and LifeX Accelerator."
+      ]
+    },
+    {
+      "role": "Team Lead",
+      "org": "UC Berkeley Division of Data Science",
+      "dates": "Jan 2021 – Aug 2021",
+      "details": [
+        "Led a 7-person infrastructure team on an application-tracking and auto-grading system used across UC Berkeley courses and programs.",
+        "Built a custom admin dashboard; full-stack Django + PostgreSQL deployed on Azure App Services; CI with GitHub Actions, unittest, and Selenium."
+      ],
+      "progression": [
+        {
+          "title": "Team Lead",
+          "dates": "May 2021 – Aug 2021"
+        },
+        {
+          "title": "Software Engineer",
+          "dates": "Jan 2021 – May 2021"
+        }
+      ]
+    },
+    {
+      "role": "Founding Backend Engineer",
+      "org": "Epiji",
+      "dates": "Mar 2020 – Dec 2020",
+      "details": [
+        "Applied NLP techniques to resumes to auto-generate heuristic strengthening suggestions.",
+        "Backend-focused full-stack work in Ruby on Rails, PostgreSQL, S3, Google OAuth, Redis, Docker.",
+        "SkyDeck Accelerator HotDesk Fall 2020 cohort (<6% acceptance); Dean's Seed Fund Grant; Jack Larson Fellowship."
+      ],
+      "subtype": "SkyDeck Startup"
+    },
+    {
+      "role": "Natural Language Processing Intern",
+      "org": "Oayaw",
+      "dates": "Mar 2020 – May 2020",
+      "details": [
+        "Applied NLP techniques to news articles to extract insights and summaries with Python, Amazon Comprehend, SQL Server, and Docker."
+      ],
+      "subtype": "SkyDeck Startup"
+    }
+  ],
+  "teaching": [
+    {
+      "code": "CS 101",
+      "name": "Intro Computing: Engineering & Science",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Fall 2026"
+    },
+    {
+      "code": "CS 409",
+      "name": "The Art of Web Programming",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Fall 2025"
+    },
+    {
+      "code": "CS 410",
+      "name": "Text Information Systems",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Fall 2024"
+    },
+    {
+      "code": "CS 307",
+      "name": "Modeling and Learning in Data Science",
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Fall 2023"
+    },
+    {
+      "code": "CS 70",
+      "name": "Discrete Mathematics and Probability Theory",
+      "org": "University of California, Berkeley",
+      "dates": "Summer 2019"
+    },
+    {
+      "code": "CS 61A",
+      "name": "Structure and Interpretation of Computer Programs",
+      "org": "University of California, Berkeley",
+      "dates": "Spring 2019"
+    }
+  ],
+  "awards": [
+    {
+      "org": "RISE AI",
+      "award": "Travel Award",
+      "year": "2025"
+    },
+    {
+      "org": "FAccT",
+      "award": "Travel Award",
+      "year": "2024"
+    },
+    {
+      "org": "NSF GRFP",
+      "award": "Honorable Mention",
+      "year": "2024"
+    },
+    {
+      "org": "Kleiner Perkins",
+      "award": "Fellowship Finalist",
+      "year": "2022"
+    }
+  ],
+  "education": [
+    {
+      "org": "University of Illinois Urbana-Champaign",
+      "dates": "Aug 2022 – Present",
+      "degree": "Ph.D. Computer Science",
+      "extra": ""
+    },
+    {
+      "org": "University of California, Berkeley",
+      "dates": "Aug 2017 – Dec 2021",
+      "degree": "B.A. Computer Science; B.A. Data Science",
+      "extra": "Minor in Digital Humanities; Certificate in Entrepreneurship and Technology"
+    }
+  ]
+}

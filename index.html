@@ -1,26 +1,184 @@
----
-layout: landing
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eunice Chan | Computer Science Ph.D. student @ UIUC</title>
+<meta name="description" content="Researching LLM applications and trustworthy ML.">
 
-<div class="column align-right">
+<!-- Social preview (Open Graph + Twitter). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eunice Chan | Computer Science Ph.D. student @ UIUC">
+<meta property="og:description" content="Researching LLM applications and trustworthy ML.">
+<meta property="og:image" content="https://eunice-chan.github.io/photo.jpeg">
+<meta property="og:url" content="https://eunice-chan.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Eunice Chan | Computer Science Ph.D. student @ UIUC">
+<meta name="twitter:description" content="Researching LLM applications and trustworthy ML.">
+<meta name="twitter:image" content="https://eunice-chan.github.io/photo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
 
-    {% if site.logo %}
-    <div class="logo-container">
-      <a class="simple logo" href="{{ page.baseurl }}" style="background-image: url('{{ site.baseurl }}{{ site.logo }}')"></a>
+<nav class="topnav">
+  <div class="topnav-links">
+    <a href="#top">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#awards">Awards</a>
+    <a href="#education">Education</a>
+  </div>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 14.5a8.5 8.5 0 1 1-9.5-11 7 7 0 0 0 9.5 11z"/></svg>
+  </button>
+  <div class="progress-bar" id="progress-bar"><div class="progress-bar-fill" id="progress-bar-fill"></div></div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero-graph" id="hero-graph" viewBox="0 0 320 260" role="img" aria-label="Decorative animated graph illustration.">
+    <g class="edges" id="graph-edges">
+      <line data-a="0" data-b="1"></line>
+      <line data-a="1" data-b="2"></line>
+      <line data-a="2" data-b="3"></line>
+      <line data-a="1" data-b="5"></line>
+      <line data-a="2" data-b="6"></line>
+      <line data-a="4" data-b="5"></line>
+      <line data-a="5" data-b="6"></line>
+      <line data-a="6" data-b="7"></line>
+      <line data-a="4" data-b="8"></line>
+      <line data-a="5" data-b="9"></line>
+      <line data-a="6" data-b="10"></line>
+      <line data-a="7" data-b="10"></line>
+      <line data-a="8" data-b="9"></line>
+      <line data-a="9" data-b="10"></line>
+      <line data-a="8" data-b="11"></line>
+    </g>
+    <g class="nodes" id="graph-nodes">
+      <circle cx="20" cy="35" r="9"></circle>
+      <circle cx="95" cy="15" r="14"></circle>
+      <circle cx="175" cy="30" r="10"></circle>
+      <circle cx="250" cy="55" r="13"></circle>
+      <circle cx="45" cy="100" r="11"></circle>
+      <circle cx="130" cy="90" r="17"></circle>
+      <circle cx="215" cy="110" r="10"></circle>
+      <circle cx="285" cy="140" r="13"></circle>
+      <circle cx="70" cy="175" r="14"></circle>
+      <circle cx="155" cy="165" r="9"></circle>
+      <circle cx="230" cy="195" r="11"></circle>
+      <circle cx="100" cy="245" r="10"></circle>
+    </g>
+  </svg>
+
+  <div class="hero-columns">
+    <div class="hero-left hero-intro">
+      <div class="hero-identity">
+        <img id="hero-photo" class="hero-photo" alt="" hidden>
+        <div>
+          <h1 id="hero-name">Eunice Chan</h1>
+          <p class="hero-role" id="hero-title">Loading&hellip;</p>
+        </div>
+      </div>
+      <p class="hero-sub" id="hero-tagline"></p>
+      <div class="icon-links" id="hero-links"></div>
     </div>
-    {% endif %}
 
-    {% if site.title %}
-    <div class="title-container"><h1>{{ site.title }}</h1></div>
-    {% endif %}
+    <div class="hero-divider" aria-hidden="true"></div>
 
-    {% if site.tagline %}
-    <div class="tagline-container"><p>{{ site.tagline }}</p></div>
-    {% endif %}
+    <div class="hero-right hero-intro">
+      <h2>About</h2>
+      <p id="about-text">Loading&hellip;</p>
+    </div>
+  </div>
 
-    {% include external.html %}
+  <a href="#publications" class="scroll-cue" aria-label="Scroll to publications">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
+</header>
 
+<main>
+
+  <section id="publications">
+    <div class="section-inner">
+      <div class="section-head reveal-scale">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5.5c2-1 5-1 8 0v13c-3-1-6-1-8 0z"/><path d="M20 5.5c-2-1-5-1-8 0v13c3-1 6-1 8 0z"/></svg>
+        <h2>Publications</h2>
+      </div>
+      <p class="section-sub">*<sup>,</sup>† denotes equal contribution</p>
+      <ol class="pub-list" id="pub-list"></ol>
+    </div>
+  </section>
+
+  <section id="experiences" class="section-color">
+    <div class="section-inner">
+      <div class="section-head reveal-scale">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5"/><path d="M3 12.5h18"/></svg>
+        <h2>Experiences</h2>
+      </div>
+      <div class="entry-list entry-grid" id="experiences-list"></div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="section-inner">
+      <div class="section-head reveal-scale">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v10H9l-4 4V5z"/><path d="M9 9h6M9 11.5h4"/></svg>
+        <h2>Teaching</h2>
+      </div>
+      <ul class="line-list" id="teaching-list"></ul>
+    </div>
+  </section>
+
+  <section id="awards" class="section-color">
+    <div class="section-inner">
+      <div class="section-head reveal-scale">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7 21l5-2.5L17 21l-2-7.5"/></svg>
+        <h2>Awards</h2>
+      </div>
+      <ul class="line-list" id="awards-list"></ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-inner">
+      <div class="section-head reveal-scale">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5l9 4.5-9 4.5-9-4.5z"/><path d="M7 11.5V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5"/><path d="M21 9.5v5"/></svg>
+        <h2>Education</h2>
+      </div>
+      <div class="timeline" id="education-list"></div>
+    </div>
+  </section>
+
+</main>
+
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<div class="side-rail side-rail-left" aria-label="Social links">
+  <span class="side-rail-line"></span>
+  <div class="side-rail-icons" id="side-rail-icons"></div>
+  <span class="side-rail-line"></span>
 </div>
-<div class="column align-left">
-    {% include landing_content.html %}
+
+<div class="side-rail side-rail-right" aria-label="Email">
+  <span class="side-rail-line"></span>
+  <button class="side-rail-email" id="side-rail-email" type="button"></button>
+  <span class="side-rail-line"></span>
 </div>
+
+<script src="script.js"></script>
+</body>
+</html>
