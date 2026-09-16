@@ -279,7 +279,7 @@ main {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.4;
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: var(--accent-warm);
@@ -288,7 +288,7 @@ main {
 }
 
 .hero-role {
-  margin: 24px 0 0;
+  margin: 4px 0 0;
   color: var(--muted);
   font-size: 16px;
   font-weight: 400;
