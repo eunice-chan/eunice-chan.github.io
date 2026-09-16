@@ -12,10 +12,6 @@ function el(tag, opts = {}) {
   return e;
 }
 
-// Minimal, original line-icon set (not brand marks) so we're not
-// reproducing anyone's logo artwork — just legible generic glyphs.
-// email/scholar are drawn as icons; cv is rendered as literal letters,
-// since a document glyph alone wasn't reading clearly as "CV".
 const ICONS = {
   email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>',
   scholar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5L2 10l10 5 10-5-10-5z"/><path d="M6 12.5V17c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg>',
@@ -46,9 +42,6 @@ function renderIconLinks(container, links) {
 }
 
 function renderHero(data) {
-  // Note: document.title is intentionally left as the static value set in
-  // index.html's <title> tag, not overwritten here — that title is more
-  // descriptive than the bare name and matches the social-preview tags.
   document.getElementById('hero-name').textContent = data.name;
   document.getElementById('hero-title').textContent = data.title;
   document.getElementById('hero-tagline').textContent = data.tagline;
@@ -100,7 +93,7 @@ function escapeHtml(str) {
 
 // Bolds the site owner's name wherever it appears in an author list, and
 // renders any trailing equal-contribution marker (*, †) as superscript
-// on every author, not just the owner.
+// on every author.
 function authorsHtml(authors, ownerName) {
   return authors
     .split(', ')
@@ -230,9 +223,6 @@ function renderExperiences(containerId, groups) {
 
       // A promotion within the same role gets its own small progression
       // list — title and dates for each stage — shown above the bullets.
-      // Uses real marker elements (same technique as the Education
-      // timeline) rather than ::before pseudo-elements for reliable
-      // alignment between the dots and the connecting line.
       if (item.progression && item.progression.length) {
         const prog = el('div', { class: 'role-progression' });
         item.progression.forEach(stage => {
@@ -280,9 +270,6 @@ function renderExperiences(containerId, groups) {
   });
 }
 
-// Education: rendered as a small connected timeline (dot + line) rather
-// than the entry-card component used elsewhere — with only two entries,
-// a distinct compact treatment reads better than reusing a heavier pattern.
 function renderEducation(containerId, entries) {
   const container = document.getElementById(containerId);
   entries.forEach(item => {
@@ -319,8 +306,7 @@ function renderTeaching(containerId, items) {
 }
 
 // Year leads each award row, in its own aligned column, followed by the
-// award text — a small table shape rather than the left-main/right-date
-// pattern Teaching uses.
+// award text.
 function renderAwards(containerId, items) {
   const container = document.getElementById(containerId);
   items.forEach(item => {
@@ -328,7 +314,7 @@ function renderAwards(containerId, items) {
     li.appendChild(el('span', { class: 'award-year', text: item.year }));
     const text = el('span', { class: 'award-text' });
     text.appendChild(el('span', { class: 'item-code', text: item.org + ' ' }));
-    text.appendChild(document.createTextNode(item.award));
+    text.appendChild(el('span', { text: item.award }));
     li.appendChild(text);
     container.appendChild(li);
   });
@@ -360,8 +346,7 @@ function initTheme() {
 // Ambient float: each node drifts on its own slow, gently randomized
 // sine path. Connected edges are redrawn every frame to follow along.
 // Hovering a node highlights it and its direct connections; clicking
-// sends a little pulse rippling out along the edges — a small nod to
-// message-passing on a graph, not just decoration.
+// sends a little pulse rippling out along the edges.
 function initGraphAnimation() {
   const svg = document.getElementById('hero-graph');
   if (!svg) return;
@@ -509,7 +494,7 @@ function initHeroParallax() {
   onScroll();
 }
 
-// A quiet, one-time reveal as list items (publications, experience,
+// A one-time reveal as list items (publications, experience,
 // teaching, awards) and section headings first scroll into view —
 // staggered slightly so it reads as one gesture per section rather
 // than a busy effect.
@@ -541,6 +526,26 @@ function initRevealOnScroll() {
 
   items.forEach(item => observer.observe(item));
 }
+
+// Keeps --nav-height in sync with the topnav's real rendered height, so
+// the hero's top padding always clears it — whether the links wrap to
+// one row, two, or three. ResizeObserver catches viewport resizes,
+// orientation changes, and font-load reflows alike.
+function initNavOffset() {
+  const nav = document.querySelector('.topnav');
+  if (!nav) return;
+  const sync = () => {
+    document.documentElement.style.setProperty('--nav-height', `${Math.ceil(nav.getBoundingClientRect().height)}px`);
+  };
+  sync();
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(sync).observe(nav);
+  } else {
+    window.addEventListener('resize', sync);
+  }
+}
+
+initNavOffset();
 
 loadContent()
   .then(data => {

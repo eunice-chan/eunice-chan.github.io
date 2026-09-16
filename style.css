@@ -1,11 +1,11 @@
 :root,
 [data-theme="light"] {
-  --paper: #F5F3EE;
-  --ink: #1C1B19;
-  --muted: #66625A;
-  --rule: #DBD7CC;
-  --accent: #2E3B7C;      /* graph-edge blue, used sparingly (links, edges) */
-  --accent-warm: #9C6A1E; /* primary interactive/highlight color */
+  --paper: #f1f8ff;
+  --ink: #17171a;
+  --muted: #9ca1b9;
+  --rule: #b2e0d4;
+  --accent: #2e7c65;      /* graph-edge blue, used sparingly (links, edges) */
+  --accent-warm: #3d6d8a; /* primary interactive/highlight color */
   --max: 800px;
   --gutter: 28px;
 }
@@ -14,10 +14,10 @@
    same as light mode so the palette reads as one consistent identity
    rather than two different color schemes. */
 [data-theme="dark"] {
-  --paper: #191A17;
-  --ink: #ECE8DD;
-  --muted: #99938B;
-  --rule: #37362F;
+  --paper: #17191a;
+  --ink: #e4e8f6;
+  --muted: #888ca1;
+  --rule: #364a40;
 }
 
 * { box-sizing: border-box; }
@@ -28,16 +28,15 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'IBM Plex Sans', system-ui, sans-serif;
-  font-size: 17px;
+  font-family: 'Pavanam', system-ui, sans-serif;
+  font-size: 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background 0.2s, color 0.2s;
 }
 
 h1, h2 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
+  font-family: 'Tiro Gurmukhi', Georgia, serif;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
@@ -75,6 +74,30 @@ a:focus-visible, button:focus-visible {
   text-decoration: none;
   position: relative;
   padding-bottom: 2px;
+}
+
+/* Mobile nav: instead of letting items wrap wherever they happen to
+   run out of room, force a deliberate grid — 3-per-row (two rows) down
+   to 640px, then 2-per-row (three rows) once it's too tight for that.
+   The toggle is pulled out of the flex flow and pinned to the corner
+   (rather than given its own row) so it doesn't leave a mostly-empty
+   row above the links. */
+@media (max-width: 640px) {
+  .theme-toggle {
+    position: absolute;
+    top: 14px;
+    right: var(--gutter);
+  }
+  .topnav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 10px 6%;
+    padding-right: 46px; /* clears the toggle pinned in the corner */
+  }
+  .topnav-links a { flex: 0 0 28%; text-align: center; }
+}
+@media (max-width: 400px) {
+  .topnav-links a { flex: 0 0 42%; }
 }
 .topnav a::after {
   content: '';
@@ -120,7 +143,6 @@ a:focus-visible, button:focus-visible {
   color: var(--muted);
   cursor: pointer;
   padding: 0;
-  position: relative;
 }
 .theme-toggle:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
 .theme-toggle svg {
@@ -147,6 +169,14 @@ main {
   position: relative;
 }
 
+.section-inner-wide {
+  display: flex;
+  position: relative;
+  padding: 0 calc(var(--gutter)*7) 0;
+  margin: 0 auto;
+}
+
+
 /* ---------- Hero: first fold, full viewport height, two columns ---------- */
 
 .hero {
@@ -154,7 +184,10 @@ main {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 90px var(--gutter) 70px;
+  /* --nav-height is measured live in JS from the actual (possibly
+     multi-row) nav, so the hero always clears it regardless of how
+     many rows the nav links wrap to. */
+  padding: calc(var(--nav-height, 74px) + 16px) var(--gutter) 70px;
   border-bottom: 1px solid var(--rule);
   overflow: hidden;
 }
@@ -204,13 +237,16 @@ main {
   position: relative;
   z-index: 1;
 }
+.hero-left { justify-items: right }
 .hero-left, .hero-right { flex: 1; min-width: 0; }
 .hero-divider { width: 1px; align-self: stretch; background: var(--rule); flex-shrink: 0; }
 
 @media (max-width: 760px) {
-  .hero { min-height: auto; padding: 100px var(--gutter) 56px; }
-  .hero-columns { flex-direction: column; align-items: flex-start; gap: 36px; }
+  .hero { min-height: auto; padding: calc(var(--nav-height, 130px) + 20px) var(--gutter) 56px; }
+  .hero-columns { flex-direction: column; align-items: center; gap: 36px; }
   .hero-divider { display: none; }
+  .hero-sub { justify-self: center; }
+  .icon-links { justify-self: center; }
 }
 
 /* Hero load-in: a single orchestrated entrance, staggered via inline
@@ -229,8 +265,8 @@ main {
 }
 
 .hero-photo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--rule);
@@ -241,9 +277,9 @@ main {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(32px, 5.4vw, 58px);
+  font-size: 48px;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: var(--accent-warm);
@@ -252,17 +288,17 @@ main {
 }
 
 .hero-role {
-  margin: 20px 0 0;
+  margin: 24px 0 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 .hero-sub {
   max-width: 420px;
   color: var(--ink);
-  font-size: 16.5px;
-  margin: 20px 0 22px;
+  font-size: 18px;
+  margin: 8px 0 32px;
 }
 
 .icon-links {
@@ -288,15 +324,15 @@ main {
   transform: translateY(-2px);
 }
 .icon-link-text {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
 }
 
-.hero-right h2 { font-size: 20px; margin: 0 0 12px; }
-.hero-right p { color: var(--ink); max-width: 440px; }
+.hero-right h2 { font-size: 24px; margin: 0; }
+.hero-right p { color: var(--ink); max-width: 440px; margin-top: 4px;}
 .hero-right {
   background: color-mix(in srgb, var(--accent-warm) 7%, var(--paper));
   border-radius: 3px;
@@ -335,17 +371,16 @@ section {
   scroll-margin-top: 84px;
 }
 
-/* Full-width color band for alternating sections — spans the whole
-   viewport rather than a boxed/constrained panel, since the section
-   itself is now full-bleed and .section-inner carries the reading
-   column width. No extra padding/margin here, so spacing stays
-   identical to plain sections. */
+/* Full-width color band for alternating sections — full-bleed 
+   and .section-inner carries the reading column width. No 
+   extra padding/margin here, so spacing stays identical to 
+   plain sections. */
 .section-color {
   background: color-mix(in srgb, var(--accent-warm) 6%, var(--paper));
 }
 
 section h2 {
-  font-size: 27px;
+  font-size: 32px;
   margin: 0;
 }
 
@@ -353,7 +388,9 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 6px;
+}
+.section-head-space {
+  margin-bottom: 24px;
 }
 .section-icon {
   width: 30px;
@@ -368,7 +405,7 @@ section h2 {
   margin: 0 0 20px;
 }
 
-/* Publications — numbering is legitimate here: a real reverse-chronological sequence */
+/* Publications */
 .pub-list {
   list-style: none;
   counter-reset: pub;
@@ -388,7 +425,7 @@ section h2 {
   position: absolute;
   left: 0;
   top: 1px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
 }
@@ -404,7 +441,7 @@ section h2 {
 }
 .pub-title a { color: inherit; }
 .pub-year {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
@@ -454,7 +491,7 @@ section h2 {
    different shape from Research's stacked entries just below it. */
 .entry-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 .entry-grid .entry {
@@ -476,6 +513,10 @@ section h2 {
   border-left: none;
   border-radius: 0;
   background: none !important;
+}
+@media (max-width: 1240px) { 
+  .section-inner-wide { padding: 0 calc(var(--gutter)) 0; } 
+  .entry-grid { grid-template-columns: 1fr 1fr; } 
 }
 @media (max-width: 640px) { .entry-grid { grid-template-columns: 1fr; } }
 .entry-head {
@@ -524,10 +565,11 @@ section h2 {
 .exp-title { font-weight: 600; color: var(--ink); font-size: 16.5px; }
 .exp-org { color: var(--muted); font-size: 14.5px; margin-top: 4px; }
 .exp-dates {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
   margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 /* Card footer: category (Academic/Industry) on the left, subfield or
@@ -543,7 +585,7 @@ section h2 {
   border-top: 1px dashed var(--rule);
 }
 .footer-role {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -554,7 +596,7 @@ section h2 {
 /* Education timeline reuses these */
 .entry-role { font-weight: 600; }
 .entry-dates {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
@@ -589,18 +631,16 @@ section h2 {
   position: absolute;
   left: -16px;
   color: var(--muted);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* Small role-progression list for a promotion within the same position —
    a mini version of the Education timeline (dot + connecting line), sits
    above the bullets with real space separating it from the overall dates.
-   Uses real marker elements (not ::before) — same as Education — for
-   reliable alignment, and a transparent marker fill so it matches
-   whatever's actually behind it rather than a hardcoded color. */
+*/
 .role-progression {
   position: relative;
-  margin: 18px 0 12px;
+  margin: 12px 0;
   padding: 4px 0 14px 26px;
   border-bottom: 1px dashed var(--rule);
   display: flex;
@@ -635,7 +675,7 @@ section h2 {
   color: var(--ink);
 }
 .role-progression .prog-dates {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12.5px;
   color: var(--muted);
   white-space: nowrap;
@@ -653,10 +693,17 @@ section h2 {
 .line-list .item-code { font-weight: 600; color: var(--ink); }
 .line-list .item-org { color: var(--muted); font-size: 14.5px; margin-top: 2px; }
 .line-list .item-dates {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
+}
+
+/* Below this width the date doesn't reliably fit next to the title on
+   every row — rather than some rows wrapping and others not, force it
+   onto its own line uniformly. */
+@media (max-width: 480px) {
+  #teaching-list li { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
 
 /* Awards: year leads in its own aligned column, then the award text —
@@ -668,7 +715,7 @@ section h2 {
   gap: 26px;
 }
 .award-year {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
   color: var(--muted);
   width: 40px;
@@ -677,8 +724,14 @@ section h2 {
 .award-text { color: var(--ink); }
 .award-text .item-code { font-weight: 600; color: var(--ink); }
 
-/* Education timeline — a small connected dot-and-line pattern, distinct
-   from the card component used for Research/Industry. */
+/* Narrow screens: keep the year as its own column, but stack org and
+   award name into two lines within the second column instead of
+   letting them crowd onto one line. */
+@media (max-width: 480px) {
+  .award-text { display: flex; flex-direction: column; gap: 2px; }
+}
+
+/* Education timeline */
 .timeline {
   position: relative;
   padding-left: 26px;
@@ -707,7 +760,7 @@ section h2 {
   border: 2px solid var(--accent-warm);
 }
 
-/* Reveal-on-scroll: a single quiet entrance the first time each item
+/* Reveal-on-scroll: an entrance the first time each item
    comes into view, staggered slightly within its own list. */
 .reveal {
   opacity: 0;
@@ -765,7 +818,7 @@ section h2 {
     --muted: #555555;
     --rule: #cccccc;
     --accent: #2E3B7C;
-    --accent-warm: #9C6A1E;
+    --accent-warm: #8198b5;
   }
   body { font-size: 12.5px; }
 
@@ -793,7 +846,7 @@ section h2 {
      rule marks the section instead of spending ink on a tint. */
   .section-color { background: none; border-top: 1px solid var(--rule); }
 
-  section { padding: 24px 0; }
+  section { padding: 24px 0; border-top: 1px solid var(--rule); }
 
   /* Always show every card's bullets on paper, regardless of whatever
      was expanded/collapsed on screen — a printout should show everything. */
@@ -838,7 +891,7 @@ section h2 {
 .side-rail-email {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--muted);
