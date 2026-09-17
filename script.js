@@ -161,6 +161,45 @@ function renderPublications(data) {
   });
 }
 
+// Clicking the hero photo pops up a speech bubble with a random
+// publication title
+function initSpeechBubble(data) {
+  const photo = document.getElementById('hero-photo');
+  const bubble = document.getElementById('speech-bubble');
+  if (!photo || !bubble) return;
+
+  const titles = (data.publications || []).map(p => p.title).filter(Boolean);
+  if (!titles.length) return;
+
+  let lastIndex = -1;
+  function randomTitle() {
+    if (titles.length === 1) return titles[0];
+    let i;
+    do { i = Math.floor(Math.random() * titles.length); } while (i === lastIndex);
+    lastIndex = i;
+    return titles[i];
+  }
+
+  function show() {
+    bubble.textContent = randomTitle();
+    // Restart the animation
+    bubble.classList.remove('is-active');
+    void bubble.offsetWidth;
+    bubble.classList.add('is-active');
+  }
+
+  photo.addEventListener('click', show);
+  photo.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      show();
+    }
+  });
+  bubble.addEventListener('animationend', () => {
+    bubble.classList.remove('is-active');
+  });
+}
+
 const CHEVRON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg>';
 const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
 
@@ -566,6 +605,7 @@ loadContent()
     initRevealOnScroll();
     initHeroIntro();
     initHeroParallax();
+    initSpeechBubble(data);
   })
   .catch(err => {
     document.getElementById('hero-tagline').textContent =

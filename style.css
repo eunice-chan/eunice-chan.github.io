@@ -264,6 +264,11 @@ main {
   gap: 16px;
 }
 
+.hero-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .hero-photo {
   width: 100px;
   height: 100px;
@@ -271,9 +276,72 @@ main {
   object-fit: cover;
   border: 1px solid var(--rule);
   flex-shrink: 0;
+  cursor: pointer;
   transition: transform 0.25s ease;
 }
 .hero-photo:hover { transform: rotate(-4deg) scale(1.04); }
+.hero-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Speech bubble with comic-style tail pops up from the photo 
+   with a random publication title, then pops away on its own 
+   after a moment. */
+.speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  min-width: 180px;
+  max-width: 260px;
+  width: max-content;
+  background: color-mix(in srgb, var(--accent-warm) 7%, var(--paper));
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+  transform: translateX(-50%);
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: color-mix(in srgb, var(--accent-warm) 7%, var(--paper));
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  transform: translateX(-50%) translateY(-9px) rotate(45deg);
+}
+.speech-bubble.is-active {
+  animation: bubble-pop 3.2s cubic-bezier(.25,.9,.35,1) forwards;
+}
+@keyframes bubble-pop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.35); }
+  10%  { opacity: 1; transform: translateX(-50%) translateY(-6px) scale(1.08); }
+  16%  { transform: translateX(-50%) translateY(0) scale(1); }
+  88%  { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-8px) scale(0.8); }
+}
+@media (max-width: 760px) {
+  .speech-bubble { max-width: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .speech-bubble.is-active {
+    animation: bubble-pop-simple 3.2s linear forwards;
+  }
+  @keyframes bubble-pop-simple {
+    0%   { opacity: 0; transform: translateX(-50%); }
+    8%   { opacity: 1; transform: translateX(-50%); }
+    90%  { opacity: 1; transform: translateX(-50%); }
+    100% { opacity: 0; transform: translateX(-50%); }
+  }
+}
 
 .hero h1 {
   margin: 0;
