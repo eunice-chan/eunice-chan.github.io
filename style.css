@@ -297,7 +297,7 @@ main {
   border: 1px solid var(--rule);
   border-radius: 14px;
   padding: 12px 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   text-align: center;
@@ -392,7 +392,7 @@ main {
   transform: translateY(-2px);
 }
 .icon-link-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -493,7 +493,7 @@ section h2 {
   position: absolute;
   left: 0;
   top: 1px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
 }
@@ -509,7 +509,7 @@ section h2 {
 }
 .pub-title a { color: inherit; }
 .pub-year {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
@@ -633,7 +633,7 @@ section h2 {
 .exp-title { font-weight: 600; color: var(--ink); font-size: 16.5px; }
 .exp-org { color: var(--muted); font-size: 14.5px; margin-top: 4px; }
 .exp-dates {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
   margin-top: 6px;
@@ -653,7 +653,7 @@ section h2 {
   border-top: 1px dashed var(--rule);
 }
 .footer-role {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -664,7 +664,7 @@ section h2 {
 /* Education timeline reuses these */
 .entry-role { font-weight: 600; }
 .entry-dates {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
@@ -699,7 +699,7 @@ section h2 {
   position: absolute;
   left: -16px;
   color: var(--muted);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
 }
 
 /* Small role-progression list for a promotion within the same position —
@@ -743,7 +743,7 @@ section h2 {
   color: var(--ink);
 }
 .role-progression .prog-dates {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 12.5px;
   color: var(--muted);
   white-space: nowrap;
@@ -761,7 +761,7 @@ section h2 {
 .line-list .item-code { font-weight: 600; color: var(--ink); }
 .line-list .item-org { color: var(--muted); font-size: 14.5px; margin-top: 2px; }
 .line-list .item-dates {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
   white-space: nowrap;
@@ -783,7 +783,7 @@ section h2 {
   gap: 26px;
 }
 .award-year {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 13px;
   color: var(--muted);
   width: 40px;
@@ -959,7 +959,7 @@ section h2 {
 .side-rail-email {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pavanam', system-ui, sans-serif;
   font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--muted);
